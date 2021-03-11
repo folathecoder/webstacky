@@ -1,3 +1,70 @@
+//media queries
+@mixin media-query ($size) {
+    @if $size == desktop {
+        @media screen and (max-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $size == tablet {
+        @media screen and (max-width: 992px) {
+            @content;
+        }
+    }
+    @else if $size == tablet-mini {
+        @media screen and (max-width: 822px) {
+            @content;
+        }
+    }
+    @else if $size == mobile {
+        @media screen and (max-width: 576px) {
+            @content;
+        }
+    }
+    @else if $size == mobile-mini {
+        @media screen and (max-width: 274px) {
+            @content;
+        }
+    }
+}
+
+//typography
+
+$font-main: 'Titillium Web', sans-serif;
+$font-logo: 'Redressed', cursive;
+$font-weight-medium: 400;
+$font-weight-heavy: 700;
+
+//colors
+$color-main-bg: white;
+$color-main-font: black;
+$color-button: #3545ee;
+$color-header-bg: black;
+$color-header-font: white;
+
+// //main
+
+// * {
+//     margin: 0px;
+//     padding: 0px;
+//     list-style: none;
+//     text-decoration: none;
+//     box-sizing: border-box;
+// }
+
+// body {
+//     font-family: $font-main;
+//     color: $color-main-font;
+//     font-size: 1rem;
+//     line-height: 1.5rem;
+// }
+
+
+// header {
+//     min-height: 70px;
+//     max-width: 100%;
+//     background-color: $color-header-bg;
+//     color: $color-header-font;
+// }
 //typography
 
 $font-main: 'Titillium Web', sans-serif;
@@ -25,4 +92,116 @@ body {
     color: $color-main-font;
     font-size: 1rem;
     line-height: 1.5rem;
+    font-weight: $font-weight-medium
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+}
+h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: $font-weight-medium;
+}
+
+
+header {
+    min-height: 70px;
+    max-width: 100%;
+    background-color: $color-header-bg;
+    color: $color-header-font;
+}
+.header-container {
+    max-width: 1240px;
+    padding: 0px 7px;
+    // background-color: red;
+    margin: 0px auto;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    flex: 1;
+    font-family: $font-logo;
+    font-weight: $font-weight-heavy;
+    font-size: 2.5rem;
+
+    @include media-query(tablet) {
+        font-size: 2rem;
+    }
+
+    @include media-query(mobile) {
+        font-size: 1.5rem;
+    }
+}
+.header-button {
+    flex: 1;
+    text-align: right;
+}
+
+//button
+
+.button {
+    background-color: $color-button;
+    color: $color-header-font;
+    padding: 10px 35px;
+    font-weight: $font-weight-medium;
+    box-shadow: 0px 0px 5px rgb(82, 82, 82);
+
+    @include media-query(tablet) {
+        padding: 7px 30px;
+    }
+
+    @include media-query(mobile) {
+        padding: 5px 25px;
+    }
+    @include media-query(mobile-mini) {
+        display: none;
+    }
+
+    // &:hover {
+    //     background-color: ;
+    // }
+}
+.hero {
+    background-color: red;
+    margin: 0px auto;
+    max-width: 1240px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+
+
+    &__header {
+        flex: 1;
+        padding: 30px;
+
+        h3 {
+            margin: 35px 0px;
+        }
+    }
+
+    &__image {
+        flex: 1;
+        padding: 30px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.partners {
+    min-height: 50px;
+    max-width: 1240px;
+    background: yellow;
+    margin: 0px auto;
+    display: flex;
+
+    img {
+        width: 80%;
+        height: auto;
+    }
 }
