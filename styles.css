@@ -34,6 +34,25 @@ h1 {
   }
 }
 
+h2 {
+  font-size: 3.5rem;
+  line-height: 4rem;
+}
+
+@media screen and (max-width: 992px) {
+  h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  h2 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+
 h3 {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -49,6 +68,46 @@ h3 {
 
 @media screen and (max-width: 576px) {
   h3 {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+}
+
+h6 {
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 992px) {
+  h6 {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h6 {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 992px) {
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  p {
     font-size: 1rem;
     line-height: 1.6rem;
   }
@@ -100,10 +159,11 @@ header {
       -ms-flex: 1;
           flex: 1;
   text-align: right;
+  display: none;
 }
 
 .button {
-  background-color: #3545ee;
+  background-color: #000000;
   color: white;
   padding: 10px 35px;
   font-weight: 400;
@@ -308,18 +368,35 @@ header {
 }
 
 .services-one {
-  background-color: red;
+  background-color: #fcf0ea;
+  background-image: linear-gradient(135deg, #f8dbd7, #fff2e1);
+  -webkit-box-shadow: 0px 0px 5px rgba(236, 223, 236, 0.466);
+          box-shadow: 0px 0px 5px rgba(236, 223, 236, 0.466);
   max-width: 1200px;
-  height: 600px;
+  min-height: 500px;
   margin: 100px auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 40px;
   display: -ms-grid;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 40px;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: 200px;
       grid-template-areas: "A B B B" "C B B B" "C D E F";
+}
+
+@media screen and (max-width: 576px) {
+  .services-one {
+    min-height: 700px;
+    padding: 20px;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "A " "B" "D" "E" "F" "C";
+  }
 }
 
 .service__heading {
@@ -328,7 +405,7 @@ header {
   grid-area: A;
 }
 
-.service__image {
+.services__image {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
@@ -336,11 +413,64 @@ header {
   grid-area: B;
 }
 
+.services__image img {
+  width: 100%;
+  height: auto;
+}
+
 .service__pricing {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: white;
+  -webkit-box-shadow: 0px 0px 3px #e2e1e1;
+          box-shadow: 0px 0px 3px #e2e1e1;
+  padding: 20px;
+}
+
+.service__pricing h4 {
+  margin-bottom: 10px;
+}
+
+.service__pricing span {
+  font-size: 2.6rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+}
+
+.service__pricing a {
+  background-color: black;
+  color: white;
+  display: block;
+  max-width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.service__pricing i {
+  font-size: 0.8rem;
+  margin-right: 8px;
+}
+
+.service__pricing li {
+  line-height: 1.2rem;
+}
+
+@media screen and (max-width: 576px) {
+  .service__pricing {
+    margin: 50px 0px;
+  }
 }
 
 .service__description1 {
@@ -355,7 +485,7 @@ header {
   grid-area: E;
 }
 
-.service__description3 {
+.services__description3 {
   -ms-grid-row: 3;
   -ms-grid-column: 4;
   grid-area: F;

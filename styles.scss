@@ -40,6 +40,7 @@ $color-main-font: black;
 $color-button: #3545ee;
 $color-header-bg: black;
 $color-header-font: white;
+$color-service-one: #fcf0ea;
 
 // //main
 
@@ -73,7 +74,7 @@ $font-logo: 'Redressed', cursive;
 //colors
 $color-main-bg: white;
 $color-main-font: black;
-$color-button: #3545ee;
+$color-button: #000000;
 $color-header-bg: black;
 $color-header-font: white;
 
@@ -109,9 +110,58 @@ h1 {
         line-height: 2.5rem;
     }
 }
+
+h2 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+
+    @include media-query(tablet) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    @include media-query(tablet) {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+}
+
+
 h3 {
     font-size: 1.5rem;
     line-height: 2rem;
+    font-weight: $font-weight-medium;
+
+    @include media-query(tablet) {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    @include media-query(mobile) {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+}
+
+h6 {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    font-weight: $font-weight-heavy;
+
+    @include media-query(tablet) {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    @include media-query(mobile) {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: $font-weight-medium;
 
     @include media-query(tablet) {
@@ -158,6 +208,7 @@ header {
 .header-button {
     flex: 1;
     text-align: right;
+    display: none;
 }
 
 //button
@@ -309,35 +360,97 @@ header {
 
 
 .services-one {
-    background-color: red;
+    background-color: $color-service-one;
+    background-image: linear-gradient(135deg,#f8dbd7,#fff2e1);
+    box-shadow: 0px 0px 5px rgba(236, 223, 236, 0.466);
     max-width: 1200px;
-    height: 600px;
+    min-height: 500px;
     margin: 100px auto;
+    box-sizing: border-box;
+    padding: 40px;
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 40px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    // grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: 200px;
     grid-template-areas: 
     "A B B B"
     "C B B B"
     "C D E F";
+
+    @include media-query(mobile) {
+        min-height: 700px;
+        padding: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "A "
+        "B"
+        "D"
+        "E"
+        "F"
+        "C";
+    }
 }
 
-// .service__heading {
-//     grid-area: A;
-// }
-// .service__image {
-//     grid-area: B;
-// }
-// .service__pricing {
-//     grid-area: C;
-// }
-// .service__description1 {
-//     grid-area: D;
-// }
-// .service__description2 {
-//     grid-area: E;
-// }
-// .service__description3 {
-//     grid-area: F;
-// }
+.service__heading {
+    grid-area: A;
+}
+.services__image {
+    grid-area: B;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+.service__pricing {
+    grid-area: C;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0px 0px 3px rgb(226, 225, 225);
+    padding: 20px;
+    h4 {
+        margin-bottom: 10px;
+    }
+
+    span {
+        font-size: 2.6rem;
+        font-family: $font-main;
+        font-weight: $font-weight-heavy;
+    }
+
+    a {
+        background-color: black;
+        color: white;
+        display: block;
+        max-width: 100%;
+        text-align: center;
+        padding: 10px; 
+    }
+    i {
+        font-size: 0.8rem;
+        margin-right: 8px;
+    
+    }
+    li {
+        line-height: 1.2rem;
+    }
+
+    @include media-query(mobile) {
+        margin: 50px 0px;
+    }
+
+
+}
+.service__description1 {
+    grid-area: D;
+}
+.service__description2 {
+    grid-area: E;
+}
+.services__description3 {
+    grid-area: F;
+}
