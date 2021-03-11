@@ -98,11 +98,31 @@ body {
 h1 {
     font-size: 4rem;
     line-height: 4rem;
+
+    @include media-query(tablet) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    @include media-query(tablet) {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
 }
 h3 {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: $font-weight-medium;
+
+    @include media-query(tablet) {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    @include media-query(mobile) {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
 }
 
 
@@ -165,26 +185,75 @@ header {
     // }
 }
 .hero {
-    background-color: red;
+    // background-color: red;
     margin: 0px auto;
     max-width: 1240px;
     min-height: 500px;
     display: flex;
     align-items: center;
 
+    @include media-query(tablet) {
+        min-height: 400px;
+    }
+    @include media-query(tablet-mini) {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        min-height: 0px;
+    }
+
+    @include media-query(mobile) {
+        flex-direction: row-reverse;
+        min-height: 0px;
+    }
+
 
     &__header {
         flex: 1;
         padding: 30px;
+        // background-color: blue;
+
+
+        @include media-query(tablet) {
+            flex: 1 411px;
+        }
+
+        @include media-query(mobile) {
+            padding: 60px 20px;
+        }
 
         h3 {
             margin: 35px 0px;
+
+            @include media-query(tablet) {
+                margin: 25px 0px;
+            }
         }
+    }
+
+    .button-hero {
+        padding: 10px 60px;
+
+        @include media-query(tablet) {
+            padding: 7px 50px;
+        }
+    
+        @include media-query(mobile) {
+            padding: 5px 40px;
+        }
+    
     }
 
     &__image {
         flex: 1;
         padding: 30px;
+
+        @include media-query(tablet) {
+            flex: 1.5 411px;
+        }
+
+        @include media-query(mobile) {
+            padding: 10px;
+        }
 
         img {
             width: 100%;
@@ -192,16 +261,83 @@ header {
         }
     }
 }
-
+.partners-container {
+    max-width: 1240px;
+    margin: 0px auto;
+}
 .partners {
     min-height: 50px;
     max-width: 1240px;
-    background: yellow;
+    // background: yellow;
     margin: 0px auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 70px;
+
+    @include media-query(tablet-mini) {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 70px;
+
+    }
+    @include media-query(mobile) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: minmax(50px, 70px)
+
+    }
 
     img {
         width: 80%;
         height: auto;
+
+        @include media-query(mobile) {
+            width: 100%;
+            height: auto;
+        }
     }
 }
+.partner {
+    flex: 1;
+}
+.incognito {
+    @include media-query(tablet-mini) {
+        display: none;
+    }
+    @include media-query(mobile) {
+        display: block;
+    }
+}
+
+
+.services-one {
+    background-color: red;
+    max-width: 1200px;
+    height: 600px;
+    margin: 100px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "A B B B"
+    "C B B B"
+    "C D E F";
+}
+
+// .service__heading {
+//     grid-area: A;
+// }
+// .service__image {
+//     grid-area: B;
+// }
+// .service__pricing {
+//     grid-area: C;
+// }
+// .service__description1 {
+//     grid-area: D;
+// }
+// .service__description2 {
+//     grid-area: E;
+// }
+// .service__description3 {
+//     grid-area: F;
+// }
