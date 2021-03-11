@@ -1,0 +1,28 @@
+//typography
+
+$font-main: 'Titillium Web', sans-serif;
+$font-logo: 'Redressed', cursive;
+
+//colors
+$color-main-bg: white;
+$color-main-font: black;
+$color-button: #3545ee;
+$color-header-bg: black;
+$color-header-font: white;
+
+//main
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    color: $color-main-font;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
