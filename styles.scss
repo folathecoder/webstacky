@@ -38,34 +38,10 @@ $font-weight-heavy: 700;
 $color-main-bg: white;
 $color-main-font: black;
 $color-button: #3545ee;
-$color-header-bg: black;
+$color-header-bg: rgb(255, 255, 255);
 $color-header-font: white;
 $color-service-one: #fcf0ea;
 
-// //main
-
-// * {
-//     margin: 0px;
-//     padding: 0px;
-//     list-style: none;
-//     text-decoration: none;
-//     box-sizing: border-box;
-// }
-
-// body {
-//     font-family: $font-main;
-//     color: $color-main-font;
-//     font-size: 1rem;
-//     line-height: 1.5rem;
-// }
-
-
-// header {
-//     min-height: 70px;
-//     max-width: 100%;
-//     background-color: $color-header-bg;
-//     color: $color-header-font;
-// }
 //typography
 
 $font-main: 'Titillium Web', sans-serif;
@@ -74,7 +50,7 @@ $font-logo: 'Redressed', cursive;
 //colors
 $color-main-bg: white;
 $color-main-font: black;
-$color-button: #000000;
+$color-button: #4353ff;
 $color-header-bg: black;
 $color-header-font: white;
 
@@ -216,7 +192,7 @@ header {
 .button {
     background-color: $color-button;
     color: $color-header-font;
-    padding: 10px 35px;
+    padding: 15px 55px;
     font-weight: $font-weight-medium;
     box-shadow: 0px 0px 5px rgb(82, 82, 82);
 
@@ -281,18 +257,18 @@ header {
         }
     }
 
-    .button-hero {
-        padding: 10px 60px;
+    // .button-hero {
+    //     padding: 10px 60px;
 
-        @include media-query(tablet) {
-            padding: 7px 50px;
-        }
+    //     @include media-query(tablet) {
+    //         padding: 7px 50px;
+    //     }
     
-        @include media-query(mobile) {
-            padding: 5px 40px;
-        }
+    //     @include media-query(mobile) {
+    //         padding: 5px 40px;
+    //     }
     
-    }
+    // }
 
     &__image {
         flex: 1;
@@ -379,10 +355,10 @@ header {
     "C D E F";
 
     @include media-query(mobile) {
-        min-height: 700px;
+        min-height: 500px;
         padding: 20px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        grid-auto-rows: minmax(0px, 200px);
         grid-template-areas: 
         "A "
         "B"
@@ -409,9 +385,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: white;
-    box-shadow: 0px 0px 3px rgb(226, 225, 225);
+    background: linear-gradient(135deg,#f8b0a6,#ffdaa9);
+    box-shadow: 0px 0px 5px rgb(226, 225, 225);
     padding: 20px;
+
     h4 {
         margin-bottom: 10px;
     }
@@ -453,4 +430,8 @@ header {
 }
 .services__description3 {
     grid-area: F;
+
+    @include media-query(mobile) {
+        height: 50px;
+    }
 }
